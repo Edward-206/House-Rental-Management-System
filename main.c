@@ -78,6 +78,14 @@ void addProperty() {
     printf("\nEnter Property ID: ");
     scanf("%d", &newProperty.id);
 
+    // Check for duplicate ID
+    for (int i = 0; i < propertyCount; i++) {
+        if (properties[i].id == newProperty.id) {
+            printf("Property ID already exists! Try a different ID.\n");
+            return;
+        }
+    }
+
     printf("Enter Property Type (House/Apartment): ");
     scanf("%s", newProperty.type);
 
